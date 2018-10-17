@@ -1,18 +1,19 @@
 class SessionsController < ApplicationController
 
   def create
-    user = User.find_by(:email => params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to user_path(user)
-    else
-      redirect_to root_path
-    end
+    @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+    raise.inspect
   end
 
   def destroy
     reset_session
     redirect_to root_path
+  end
+
+  private
+
+  def auth
+    request.env['omniauth.auth']
   end
 
 

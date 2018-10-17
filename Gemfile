@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Spotify Authorization
 gem 'omniauth-spotify'
 gem 'dotenv-rails'
+gem 'rspotify', '~> 1.18'
 # Upload Images
 gem 'paperclip'
 

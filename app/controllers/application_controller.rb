@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  RSpotify::authenticate(ENV['SPOTIFY_ID'], ENV['SPOTIFY_SECRET'])
+
   def authentication_required
     if !logged_in?
       redirect_to root_path
