@@ -2,10 +2,27 @@
 
 <h5>Add Album</h5>
 
+<%= form_tag('#', {:onSubmit => 'searchAlbums(params[:search]);'}) do %>
 
+  <%= text_field_tag :search %><br>
+  <%= submit_tag "Search" %>
+
+<% end %>
+
+<h5>Results</h5>
+
+<h5>Top Albums</h5>
 <% current_user.albums.each do |a| %>
   <li><%= a.name %></li>
 <% end %>
 
 
 <%= link_to "Logout", logout_path %>
+
+<script>
+  function searchAlbums() {
+    fetch('http://api.open-notify.org/astros.json')
+    .then(response => response.json())
+    .then(json => console.log(json));
+    }
+</script>
