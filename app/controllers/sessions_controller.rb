@@ -1,8 +1,18 @@
 class SessionsController < ApplicationController
 
   def create
-    @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-    raise.inspect
+    spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+
+    if User.exists?(email: spotify_user.email)
+      @user = User.find_by(email: spotify_user.email)
+    else
+      @user = User.new(email: spotify_user.email, username: spotify_user.id)
+      @user.save
+    end
+
+    session[:user_id] = @user.id
+
+    redirect_to user_path(@user)
   end
 
   def destroy
