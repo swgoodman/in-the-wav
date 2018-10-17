@@ -33,7 +33,8 @@ gem 'rspotify', '~> 1.18'
 # Upload Images
 gem 'paperclip'
 #jQUERY
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'rails-ujs', '~> 0.1.0'
 
 
 
