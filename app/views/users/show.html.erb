@@ -1,5 +1,11 @@
-<h1> Hellow <%= current_user.username %> </h1>
+<h1> Hello <%= current_user.username %> </h1>
 
 <h5>Add Album</h5>
+
+
+<% current_user.albums.each do |a| %>
+  <li><%= a.name %></li>
+<% end %>
+
 
 <%= link_to "Logout", logout_path %>
