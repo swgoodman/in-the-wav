@@ -1,6 +1,6 @@
 <h1>Sign Up!</h1>
 
-<%= form_for :user do |u| %>
+<%= form_for @user, url: {action: "create"} do |u| %>
   <%= u.label "username" %>
   <%= u.text_field :username %><br>
 
@@ -8,7 +8,7 @@
   <%= u.text_field :email %><br>
 
   <%= u.label "password" %>
-  <%= u.text_field :password %><br>
+  <%= u.password_field :password %><br>
 
   <%= u.submit "Let's Party" %>
 <% end %>
