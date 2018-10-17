@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     session[:user_id] = @user.id
 
-    redirect_to user_path(@user)
+    redirect_to user_albums_path(@user)
   end
 
   def destroy
