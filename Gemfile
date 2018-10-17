@@ -32,6 +32,8 @@ gem 'dotenv-rails'
 gem 'rspotify', '~> 1.18'
 # Upload Images
 gem 'paperclip'
+#jQUERY
+gem 'jquery-rails'
 
 
 
