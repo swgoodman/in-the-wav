@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :users, :only => [:create, :show]
 
+  get '/auth/spotify/callback' => 'sessions#create'
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 end
