@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-
-  before_action :current_user, only: [:index]
-
-  def index
-  end
+  before_action :authentication_required, :except => [:create]
 
   def create
     @user = User.new(user_params)
@@ -21,14 +17,6 @@ class UsersController < ApplicationController
 
 
 private
-
-  def current_user
-    if session[:user_id]
-      @user = User.find(session[:user_id])
-    else
-      @user = User.new
-    end
-  end
 
   def user_params
     params.require(:user).permit(:username, :email, :password)

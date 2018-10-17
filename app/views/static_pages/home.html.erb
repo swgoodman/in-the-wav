@@ -16,13 +16,10 @@
 
 <h1>Sign In!</h1>
 
-<%= form_for(@user) do |u| %>
+<%= form_tag(sessions_path) do |u| %>
 
-  <%= u.label "email" %>
-  <%= u.text_field :email %><br>
+  <%= text_field_tag :email, '', :placeholder => "Email" %><br>
+  <%= text_field_tag :password, '', :placeholder => "Password" %><br>
 
-  <%= u.label "password" %>
-  <%= u.password_field :password %><br>
-
-  <%= u.submit "Let's Party" %>
+  <%= submit_tag "Log In" %>
 <% end %>
