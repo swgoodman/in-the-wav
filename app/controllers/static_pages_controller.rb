@@ -1,8 +1,11 @@
 class StaticPagesController < ApplicationController
-  before_action :current_user
 
   def home
-    raise.inspect
+    if current_user
+      redirect_to user_path(@user)
+    else
+      @user = User.new
+    end
   end
 
   private
@@ -10,8 +13,6 @@ class StaticPagesController < ApplicationController
     def current_user
       if session[:user_id]
         @user = User.find(session[:user_id])
-      else
-        @user = User.new
       end
     end
 
