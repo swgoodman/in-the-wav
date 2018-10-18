@@ -3,6 +3,7 @@
   <div id="album_section">
 
   <h1> Hello <%= current_user.username %> </h1>
+  <%= link_to "Logout", logout_path %>
     <h5>Add Album</h5>
       <%= form_tag(user_albums_path, {:id => 'search_form'}) do %>
         <%= text_field_tag :search %><br>
@@ -24,5 +25,3 @@
 
   </div>
 </div>
-
-<%= link_to "Logout", logout_path %>

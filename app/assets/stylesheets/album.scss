@@ -1,3 +1,23 @@
 // Place all the styles related to the album controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#album_index {
+  margin: 1em;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: .5em;
+  grid-auto-rows: minmax(90px, auto);
+  position: relative;
+  justify-content: center;
+
+}
+
+
+.album_index > div {
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 2em;
+  position: relative;
+}
