@@ -2,9 +2,10 @@
 
 <h5>Add Album</h5>
 
-<%= form_tag do %>
+<%= form_tag(user_albums_path, {:id => 'search_form'}) do %>
 
   <%= text_field_tag :search %><br>
+  <%= hidden_field_tag 'credentials', current_user.credentials %>
   <%= submit_tag "Search" %>
 
 <% end %>
