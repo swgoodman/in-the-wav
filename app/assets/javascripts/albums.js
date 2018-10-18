@@ -14,7 +14,7 @@ $(function() {
       beforeSend: function(request) {
         request.setRequestHeader('Authorization', 'Bearer ' + accessToken);
       }
-    }).success(function(response) {
+      }).success(function(response) {
       var $search_list = $("div#search_results ol")
       $search_list.html("")
 
@@ -26,17 +26,11 @@ $(function() {
           console.log(value.external_urls.spotify);
           console.log(value.images[0].url);
         })
-        debugger
+        $('#search_form')[0].reset();
     }).error(function(notNeeded){
       alert("Error, please try again. If error persists, please log out and back in again.")
     });
 
-    // $.ajax({
-    //   url: this.href,
-    //   dataType: 'script'
-    // })
-    // })
+
   });
-
-
 });
