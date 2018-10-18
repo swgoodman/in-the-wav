@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   resources :users, :only => [:create, :show] do
-    resources :albums, :only => [:index, :show, :update, :destroy]
+    resources :albums, :only => [:index, :create, :show, :update, :destroy]
   end
 
   get '/auth/spotify/callback' => 'sessions#create'

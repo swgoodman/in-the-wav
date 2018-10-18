@@ -2,7 +2,7 @@
 
 <h5>Add Album</h5>
 
-<%= form_tag('#', {:onSubmit => 'searchAlbums(params[:search]);'}) do %>
+<%= form_tag do %>
 
   <%= text_field_tag :search %><br>
   <%= submit_tag "Search" %>
@@ -18,12 +18,3 @@
 
 
 <%= link_to "Logout", logout_path %>
-
-<script>
-  $(function() {
-    $("#search").on("submit", function(e){
-      alert("Yo what up!");
-      e.preventDefault();
-    })
-  })
-</script>

@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
     if current_user
-      redirect_to user_path(@user)
+      redirect_to user_albums_path(@user)
     else
       @user = User.new
     end
