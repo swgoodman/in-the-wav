@@ -14,8 +14,8 @@ $(function() {
       beforeSend: function(request) {
         request.setRequestHeader('Authorization', 'Bearer ' + accessToken);
       }
-    }).done(function(data) {
+    }).done(function(response) {
       debugger
-    })
+    });
   });
 });
