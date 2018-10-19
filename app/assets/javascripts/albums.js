@@ -10,7 +10,7 @@ function Album(name, artist, release_date, external_url, image_url) {
 }
 
 
-
+//Search Spotify API and Return Search Results as JS Album Objects
 $(function searchAPI() {
   $('#search_form').on("submit", function(e){
     e.preventDefault();
@@ -37,7 +37,12 @@ $(function searchAPI() {
           let image_attr = value.images[0].url
 
           let album = new Album(name_attr, artist_attr, release_attr, url_attr, image_attr);
-          $search_list.append("<li>" + album.name + '-' + album.artist + "</li>");
+          $search_list.append("<li>"
+            + album.name
+            + ' - '
+            + album.artist
+            + '<form id="add_album"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.release_date + '" type="hidden"><input id="url" value="' + album.external_url + '" type="hidden"><input id="image" value="' + album.image_url + '" type="hidden"><input value="Add" type="submit">'
+            + "</li>");
           console.log(album.name);
           console.log(album.artist);
           console.log(album.release_date);
