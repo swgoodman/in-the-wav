@@ -1,6 +1,17 @@
 
 
-$(function() {
+//JSON Album Constructor Function
+function Album(name, artist, release_date, external_url, image_url) {
+  this.name = name
+  this.artist = artist
+  this.release_date = release_date
+  this.external_url = external_url
+  this.image_url = image_url
+}
+
+
+
+$(function searchAPI() {
   $('#search_form').on("submit", function(e){
     e.preventDefault();
 
@@ -19,8 +30,9 @@ $(function() {
       $search_list.html("")
 
         $.each(response.albums.items, function(name, value) {
-          console.log(value.artists[0].name);
+          console.log(new Album(value.artists[0].name, value.name, value.release_date, value.external_urls.spotify, value.images[0].url))
           $search_list.append("<li>" + value.name + '-' + value.artists[0].name + "</li>");
+          console.log(value.artists[0].name);
           console.log(value.name);
           console.log(value.release_date);
           console.log(value.external_urls.spotify);
