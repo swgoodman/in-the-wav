@@ -5,6 +5,8 @@ class AlbumsController < ApplicationController
   end
 
   def create
+    @user = current_user
+     
   end
 
 end

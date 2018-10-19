@@ -41,7 +41,7 @@ $(function searchAPI() {
             + album.name
             + ' - '
             + album.artist
-            + '<form id="add_album"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.release_date + '" type="hidden"><input id="url" value="' + album.external_url + '" type="hidden"><input id="image" value="' + album.image_url + '" type="hidden"><input value="Add" type="submit">'
+            + '<form id="add_album" action="albums" method="post"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.release_date + '" type="hidden"><input id="url" value="' + album.external_url + '" type="hidden"><input id="image" value="' + album.image_url + '" type="hidden"><input value="Add" type="submit">'
             + "</li>");
           console.log(album.name);
           console.log(album.artist);
