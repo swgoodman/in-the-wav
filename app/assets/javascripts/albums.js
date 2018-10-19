@@ -30,7 +30,13 @@ $(function searchAPI() {
       $search_list.html("")
 
         $.each(response.albums.items, function(name, value) {
-          let album = new Album(value.artists[0].name, value.name, value.release_date, value.external_urls.spotify, value.images[0].url);
+          let name_attr = value.name
+          let artist_attr = value.artists[0].name
+          let release_attr = value.release_date
+          let url_attr = value.external_urls.spotify
+          let image_attr = value.images[0].url
+
+          let album = new Album(name_attr, artist_attr, release_attr, url_attr, image_attr);
           $search_list.append("<li>" + album.name + '-' + album.artist + "</li>");
           console.log(album.name);
           console.log(album.artist);
