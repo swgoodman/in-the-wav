@@ -26,17 +26,23 @@ $(function searchAPI() {
         request.setRequestHeader('Authorization', 'Bearer ' + accessToken);
       }
       }).success(function(response) {
-      var $search_list = $("div#search_results ol")
+      var $search_list = $("div#search_results ul")
       $search_list.html("")
 
         $.each(response.albums.items, function(name, value) {
-          console.log(new Album(value.artists[0].name, value.name, value.release_date, value.external_urls.spotify, value.images[0].url))
-          $search_list.append("<li>" + value.name + '-' + value.artists[0].name + "</li>");
-          console.log(value.artists[0].name);
-          console.log(value.name);
-          console.log(value.release_date);
-          console.log(value.external_urls.spotify);
-          console.log(value.images[0].url);
+          let album = new Album(value.artists[0].name, value.name, value.release_date, value.external_urls.spotify, value.images[0].url);
+          $search_list.append("<li>" + album.name + '-' + album.artist + "</li>");
+          console.log(album.name);
+          console.log(album.artist);
+          console.log(album.release_date);
+          console.log(album.external_url);
+          console.log(album.image_url);
+
+          // console.log(value.artists[0].name);
+          // console.log(value.name);
+          // console.log(value.release_date);
+          // console.log(value.external_urls.spotify);
+          // console.log(value.images[0].url);
         })
         $( '#search_form' ).each(function(){
           this.reset();
