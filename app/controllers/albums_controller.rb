@@ -8,6 +8,8 @@ class AlbumsController < ApplicationController
   def create
     @user = current_user
     @album = @user.album.build(album_params)
+    if @album.save
+    end
   end
 
   private
