@@ -8,7 +8,7 @@
       <%= form_tag(user_albums_path, {:id => 'search_form'}) do %>
         <%= text_field_tag :search %><br>
         <%= hidden_field_tag 'credentials', current_user.credentials %>
-        <%= submit_tag "Search" %>
+        <%= submit_tag "Search", data: { disable_with: false } %>
       <% end %>
     <h5>Results</h5>
     <div id="search_results">

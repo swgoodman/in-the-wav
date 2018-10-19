@@ -26,7 +26,9 @@ $(function() {
           console.log(value.external_urls.spotify);
           console.log(value.images[0].url);
         })
-        $('#search_form')[0].reset();
+        $( '#search_form' ).each(function(){
+          this.reset();
+        });
     }).error(function(notNeeded){
       alert("Error, please try again. If error persists, please log out and back in again.")
     });
