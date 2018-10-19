@@ -10,12 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_18_051154) do
+ActiveRecord::Schema.define(version: 2018_10_19_192040) do
 
   create_table "albums", force: :cascade do |t|
     t.integer "rank"
     t.string "name"
     t.integer "user_id"
+    t.string "artist"
+    t.datetime "release_date"
+    t.string "release_external_url"
+    t.string "release_image_url"
   end
 
   create_table "users", force: :cascade do |t|
