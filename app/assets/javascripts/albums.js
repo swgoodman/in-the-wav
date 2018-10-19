@@ -41,19 +41,8 @@ $(function searchAPI() {
             + album.name
             + ' - '
             + album.artist
-            + '<form id="add_album" action="albums" method="post"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.release_date + '" type="hidden"><input id="url" value="' + album.external_url + '" type="hidden"><input id="image" value="' + album.image_url + '" type="hidden"><input value="Add" type="submit">'
+            + '<form id="' + album.external_url + '" method="post"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.release_date + '" type="hidden"><input id="url" value="' + album.external_url + '" type="hidden"><input id="image" value="' + album.image_url + '" type="hidden"><input value="Add" type="submit">'
             + "</li>");
-          console.log(album.name);
-          console.log(album.artist);
-          console.log(album.release_date);
-          console.log(album.external_url);
-          console.log(album.image_url);
-
-          // console.log(value.artists[0].name);
-          // console.log(value.name);
-          // console.log(value.release_date);
-          // console.log(value.external_urls.spotify);
-          // console.log(value.images[0].url);
         })
         $( '#search_form' ).each(function(){
           this.reset();
@@ -64,4 +53,18 @@ $(function searchAPI() {
 
 
   });
+});
+
+
+$(function createAlbum() {
+  $(this).click(function() {
+    let album = event.target.id
+
+    $('#'+album).on("submit", function(e){
+      e.preventDefault()
+      alert("HEYYLOOW!")
+      console.log(this)
+    })
+
+  })
 });
