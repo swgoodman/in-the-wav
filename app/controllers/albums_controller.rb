@@ -7,7 +7,7 @@ class AlbumsController < ApplicationController
 
   def create
     @user = current_user
-    @album = @user.album.build(album_params)
+    @album = @user.albums.build(name: params["name"], name: params["artist"], name: params["release_date"], name: params["external_url"], name: params["image_url"])
     if @album.save
     end
   end
