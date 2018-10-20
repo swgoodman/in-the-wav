@@ -6,9 +6,9 @@ class AlbumsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @album = @user.albums.build(name: params["name"], name: params["artist"], name: params["release_date"], name: params["external_url"], name: params["image_url"])
+    @album = @user.albums.build(album_params)
     if @album.save
+      redirect_to user_albums_path(@user)
     end
   end
 
@@ -19,7 +19,7 @@ class AlbumsController < ApplicationController
   end
 
   def album_params
-    params.require(:album).permit(:name, :artist, :release_date, :external_url, :image_url)
+    params.require(:album).permit(:name, :artist, :release_date, :release_external_url, :release_image_url)
   end
 
 end

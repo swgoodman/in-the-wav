@@ -43,7 +43,7 @@ $(function () {
           album.name +
           ' - ' +
           album.artist +
-          '<form class="add_album" id="' + i + '"><input type=hidden name="authenticity_token" value="form_authenticity_token"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.release_date + '" type="hidden"><input id="url" value="' + album.external_url + '" type="hidden"><input id="image" value="' + album.image_url + '" type="hidden"><input type="submit" value="Add" name="commit">' +
+          '<form class="add_album" id="' + i + '"><input type=hidden name="authenticity_token" value="' +  '<%= form_authenticity_token %>'  + '"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.release_date + '" type="hidden"><input id="url" value="' + album.external_url + '" type="hidden"><input id="image" value="' + album.image_url + '" type="hidden"><input type="submit" value="Add" name="commit">' +
           '</li>');
         i++
       })
@@ -54,19 +54,29 @@ $(function () {
       $(function createAlbum() {
 
         $("form.add_album").on('submit', function(e){
-          alert("hello")
+          alert("hey guys")
           e.preventDefault();
-          // let album=(event.target.id);
+          url = this.action
+
+          data = {
+            'authenticity_token': $("input[name='authenticity_token']").val(),
+            album: {
+              'name': $("#name").val(),
+              'artist': $("#artist").val(),
+              'release_date': $("#release").val(),
+              'release_external_url': $("#url").val(),
+              'release_image_url': $("#image").val(),
+            }
+          };
+          $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            success: function(response) {
+              debugger
+            }
+          })
         })
-        //
-        // $('#'+album).on('submit', function(e){
-        //   alert(album)
-        //   e.preventDefault();
-        // //   alert("hey guys!")
-        //
-        //
-        //   debugger
-        // })
       });
     }).error(function(notNeeded) {
       alert("Error, please try again. If error persists, please log out and back in again.")
