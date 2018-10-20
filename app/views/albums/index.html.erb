@@ -2,7 +2,7 @@
 
   <div id="album_section">
 
-  <h1> Hello <%= current_user.username %> </h1>
+  <h3> Hello <%= current_user.username %> </h3>
   <%= link_to "Logout", logout_path %>
     <h5>Add Album</h5>
       <%= form_tag(user_albums_path, {:id => 'search_form'}) do %>
@@ -18,14 +18,14 @@
   </div>
 
   <div id="album_section">
-    <h5>Albums</h5>
+    <h2>Albums</h2>
       <% current_user.albums.each do |a| %>
         <li><%= a.name %></li>
       <% end %>
   </div>
 
   <div id="album_section">
-    <h5>Album Details</h5>
+    <h4>Album Details</h4>
 
   </div>
 </div>
