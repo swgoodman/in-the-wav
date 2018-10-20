@@ -12,6 +12,9 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def search
+  end
+
   private
 
   def set_user
