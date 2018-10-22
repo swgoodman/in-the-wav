@@ -71,7 +71,6 @@ $(function () {
             url: url,
             data: data,
             success: function(response) {
-              debugger
             }
           })
         })
@@ -99,11 +98,12 @@ $(function () {
 
   $('.more_info').on('click', function(e) {
     e.preventDefault()
-    let url = this.href;
-    alert(url);
 
       $.ajax({
-        type: "GET"
+        type: "GET",
+        url: this.href
+      }).done(function(data) {
+        console.log(data)
       })
   })
 });
