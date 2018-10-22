@@ -78,8 +78,20 @@ $(function () {
       $('#search_form').each(function() {
         this.reset();
       });
+
+      $('.more_info').on('click', function(e) {
+        e.preventDefault()
+        alert("Hey guys");
+      })
+
+
     }).error(function(notNeeded) {
       alert("Error, please try again. If error persists, please log out and back in again.")
     });lin
   });
 });
+
+$('.more_info').on('click', function(e) {
+  e.preventDefault()
+  alert("Hey guys");
+})
