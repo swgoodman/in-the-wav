@@ -15,6 +15,7 @@ $(function () {
 
   $('#search_form').on("submit", function(e) {
     e.preventDefault();
+    alert("hey guys");
 
     accessToken = $("input[name='credentials']").val()
 
@@ -82,6 +83,10 @@ $(function () {
       $('.more_info').on('click', function(e) {
         e.preventDefault()
         alert("Hey guys");
+
+          $.ajax({
+            type: "GET"
+          })
       })
 
 
