@@ -15,6 +15,10 @@ class AlbumsController < ApplicationController
   def search
   end
 
+  def show
+    @album = Album.find_by(params[:id])
+  end
+
   private
 
   def set_user
