@@ -82,10 +82,12 @@ $(function () {
 
       $('.more_info').on('click', function(e) {
         e.preventDefault()
-        alert("Hey guys");
+        let url = this.href;
+        alert(url);
 
           $.ajax({
-            type: "GET"
+            type: "GET",
+            url: url
           })
       })
 
@@ -94,4 +96,14 @@ $(function () {
       alert("Error, please try again. If error persists, please log out and back in again.")
     });
   });
+
+  $('.more_info').on('click', function(e) {
+    e.preventDefault()
+    let url = this.href;
+    alert(url);
+
+      $.ajax({
+        type: "GET"
+      })
+  })
 });
