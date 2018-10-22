@@ -15,7 +15,6 @@ $(function () {
 
   $('#search_form').on("submit", function(e) {
     e.preventDefault();
-    alert("hey guys");
 
     accessToken = $("input[name='credentials']").val()
 
@@ -52,7 +51,6 @@ $(function () {
       $(function createAlbum() {
 
         $("form.add_album").on('submit', function(e){
-          alert("hey guys")
           e.preventDefault();
           url = this.action
 
@@ -81,12 +79,14 @@ $(function () {
 
       $('.more_info').on('click', function(e) {
         e.preventDefault()
-        let url = this.href;
-        alert(url);
-
           $.ajax({
             type: "GET",
-            url: url
+            url: this.href
+          }).done(function(data) {
+            console.log(data)
+            var $show_album = $('#show_album')
+            $show_album.empty()
+            $('#show_album').append(data)
           })
       })
 

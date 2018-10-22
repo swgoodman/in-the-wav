@@ -34,6 +34,7 @@ gem 'dotenv-rails'
 gem 'rspotify', '~> 1.18'
 # Upload Images
 gem 'paperclip'
+gem 'pry'
 
 
 # Use Faraday for GET and POST
