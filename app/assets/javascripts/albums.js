@@ -92,6 +92,6 @@ $(function () {
 
     }).error(function(notNeeded) {
       alert("Error, please try again. If error persists, please log out and back in again.")
-    });lin
+    });
   });
 });
