@@ -47,9 +47,6 @@ $(function () {
           '</li>');
         i++
       })
-      $('#search_form').each(function() {
-        this.reset();
-      });
 
       $(function createAlbum() {
 
@@ -78,28 +75,11 @@ $(function () {
           })
         })
       });
+      $('#search_form').each(function() {
+        this.reset();
+      });
     }).error(function(notNeeded) {
       alert("Error, please try again. If error persists, please log out and back in again.")
-    });
+    });lin
   });
-});
-
-
-// Detect Submit Click and Take Over Functionality
-$(function createAlbum() {
-
-  $("form.add_album").on('submit', function(e){
-    alert("hello")
-    e.preventDefault();
-    // let album=(event.target.id);
-  })
-  //
-  // $('#'+album).on('submit', function(e){
-  //   alert(album)
-  //   e.preventDefault();
-  // //   alert("hey guys!")
-  //
-  //
-  //   debugger
-  // })
 });
