@@ -20,7 +20,7 @@
   <div id="album_section">
     <h2>Albums</h2>
       <% current_user.albums.each do |a| %>
-        <li><%= a.name %> --- <%= link_to "More Info", [current_user, a], class: "more_info"%> <a href="<%= a.release_external_url%>">LISTEN!</a></li>
+        <li><%= a.name %> --- <%= link_to "More Info", [current_user, a], class: "more_info"%> - <%= link_to "LISTEN!", a.release_external_url, target: "_blank", rel: "noopener noreferrer" %></li>
       <% end %>
   </div>
 

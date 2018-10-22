@@ -90,8 +90,3 @@ $(function () {
     });lin
   });
 });
-
-$('.more_info').on('click', function(e) {
-  e.preventDefault()
-  alert("Hey guys");
-})
