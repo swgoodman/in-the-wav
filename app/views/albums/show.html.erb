@@ -1,0 +1,8 @@
+<%= image_tag(@album.release_external_url, :alt => "album_cover", height: "100", width: "100") %>
+
+<%= @album.name %>
+<%= @album.artist %>
+<br>
+<%= @album.release %>
+<br>
+<%= link_to "LISTEN", @album.release_external_url %>
