@@ -104,6 +104,9 @@ $(function () {
         url: this.href
       }).done(function(data) {
         console.log(data)
+        var $show_album = $('#show_album')
+        $show_album.empty()
+        $('#show_album').append(data)
       })
   })
 });
