@@ -39,6 +39,7 @@ gem 'pry'
 
 # Use Faraday for GET and POST
 gem 'faraday'
+gem 'active_model_serializers'
 
 
 
