@@ -37,7 +37,7 @@ $(function () {
         let release_attr = value.release_date
         let url_attr = value.external_urls.spotify
         let image_attr = value.images[0].url
-        debugger
+        
         let album = new Album(name_attr, artist_attr, release_attr, url_attr, image_attr);
         $search_list.append('<li class"returned_albums">' +
           album.name +
@@ -103,7 +103,6 @@ $(function () {
         url: this.href + ".json"
       }).done(function(data) {
         console.log(data)
-        debugger
         var $show_album = $('#show_album')
         $show_album.empty()
         $('#show_album').append(data)

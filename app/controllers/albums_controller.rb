@@ -17,7 +17,6 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
-    byebug
     render json: @album
   end
 
