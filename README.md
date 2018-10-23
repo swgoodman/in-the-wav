@@ -1,4 +1,4 @@
-# In The Wav. <img src="https://media.giphy.com/media/26ufhUp00gyiOwdig/giphy.gif" height="50" width="50">
+# In The Wav. <img src="https://media.giphy.com/media/26ufhUp00gyiOwdig/giphy.gif" height="70" width="70">
 
 ### Description
 
