@@ -72,7 +72,8 @@ $(function () {
             url: url,
             data: data,
             success: function(response) {
-              $('#album_list').append('<li>' + response.name + '</li>')
+              console.log(response);
+              $('#album_list').append('<li>' + response.name + '---' + "<a href='/users/'" + response.user_id + '/albums/' + response.id + "class='more_info'>More Info</a> - <a href=" + response.release_external_url + "target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
             }
           })
         })
