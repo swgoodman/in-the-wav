@@ -8,7 +8,7 @@ class AlbumsController < ApplicationController
   def create
     @album = @user.albums.build(album_params)
     if @album.save
-      redirect_to user_albums_path(@user)
+      render json: @album
     end
   end
 

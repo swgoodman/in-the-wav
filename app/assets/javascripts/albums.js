@@ -66,12 +66,13 @@ $(function () {
               'release_image_url': $(this.image).val(),
             }
           };
-          debugger
+
           $.ajax({
             type: "POST",
             url: url,
             data: data,
             success: function(response) {
+              $('#album_list').append('<li>' + response.name + '</li>')
             }
           })
         })
