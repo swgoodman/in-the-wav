@@ -37,7 +37,7 @@ $(function () {
         let release_attr = value.release_date
         let url_attr = value.external_urls.spotify
         let image_attr = value.images[0].url
-        
+
         let album = new Album(name_attr, artist_attr, release_attr, url_attr, image_attr);
         $search_list.append('<li class"returned_albums">' +
           album.name +
@@ -50,20 +50,23 @@ $(function () {
 
       $(function createAlbum() {
 
-        $("form.add_album").on('submit', function(e){
+        $("form.add_album").on('click', function(e){
+
+          let that = $(this);
           e.preventDefault();
           url = this.action
 
           data = {
             'authenticity_token': $("input[name='authenticity_token']").val(),
             album: {
-              'name': $("#name").val(),
-              'artist': $("#artist").val(),
-              'release_date': $("#release").val(),
-              'release_external_url': $("#url").val(),
-              'release_image_url': $("#image").val(),
+              'name': $(this.name).val(),
+              'artist': $(this.artist).val(),
+              'release_date': $(this.release).val(),
+              'release_external_url': $(this.url).val(),
+              'release_image_url': $(this.image).val(),
             }
           };
+          debugger
           $.ajax({
             type: "POST",
             url: url,
@@ -72,6 +75,9 @@ $(function () {
             }
           })
         })
+        $('form.add_album').each(function() {
+          this.reset();
+        });
       });
       $('#search_form').each(function() {
         this.reset();
