@@ -7,6 +7,12 @@ function Album(name, artist, release_date, external_url, image_url) {
   this.release_date = release_date
   this.external_url = external_url
   this.image_url = image_url
+
+  this.recent = function() {
+    if (this.release_date > "2018-01-01")
+      return "Recent!"
+      console.log("recent")
+  }
 }
 
 
@@ -73,7 +79,7 @@ $(function () {
             data: data,
             success: function(response) {
               console.log(response);
-              $('#album_list').append('<li>' + response.name + '---' + "<a href='/users/" + response.user_id + "/albums/" + response.id + "' class='more_info'>More Info</a> - <a href=" + response.release_external_url + "target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
+              $('#album_list').append('<li>' + response.name + '---' + "<a href='/users/" + response.user_id + "/albums/" + response.id + "' class='more_info'>More Info</a> - <a href='" + response.release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
 
               $('.more_info').on('click', function(e) {
                 e.preventDefault()
@@ -81,7 +87,6 @@ $(function () {
                     type: "GET",
                     url: this.href + ".json"
                   }).done(function(data) {
-                    debugger
                     console.log(data)
                     var $show_album = $('#show_album')
                     $show_album.empty()
@@ -113,7 +118,6 @@ $(function () {
         type: "GET",
         url: this.href + ".json"
       }).done(function(data) {
-        debugger
         console.log(data)
         var $show_album = $('#show_album')
         $show_album.empty()
