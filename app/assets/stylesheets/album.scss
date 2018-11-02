@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background-color: #CFFFB3;
+}
+
 div#album_index {
   margin: 1em;
   display: grid;
@@ -19,4 +23,5 @@ div#album_section {
   border: 1px solid;
   padding: 1em;
   position: relative;
+  background-color: #191414;
 }
