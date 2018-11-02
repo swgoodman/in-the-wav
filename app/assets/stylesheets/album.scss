@@ -4,7 +4,10 @@
 
 body {
   background-color: #CFFFB3;
+  color: white;
 }
+
+a { color: #DBDBDB; } 
 
 div#album_index {
   margin: 1em;
@@ -24,4 +27,8 @@ div#album_section {
   padding: 1em;
   position: relative;
   background-color: #191414;
+}
+
+text {
+
 }
