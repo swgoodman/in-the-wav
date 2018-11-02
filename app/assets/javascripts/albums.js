@@ -112,12 +112,22 @@ $(function () {
     e.preventDefault()
       $.ajax({
         type: "GET",
-        url: this.href + ".json"
+        url: this.href,
+        contentType: 'application/json'
       }).done(function(data) {
-        console.log(data)
         var $show_album = $('#show_album')
         $show_album.empty()
         $('#show_album').append("<img src='" + data.release_image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
       })
+  })
+
+  $('#alphabatize').on('click', function(e) {
+    e.preventDefault();
+      $.get(this.href, function(data) {
+        console.log(data);
+        // $.each(data.albums, function(name, value) {
+        //   $('#album_list').append('<li>' + response.name + ' --- ' + "<a href='/users/" + response.user_id + "/albums/" + response.id + "' class='more_info'>More Info</a> - <a href='" + response.release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
+    // })
+      }, "json")
   })
 });
