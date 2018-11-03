@@ -7,7 +7,7 @@ body {
   color: white;
 }
 
-a { color: #DBDBDB; } 
+a { color: #DBDBDB; }
 
 div#album_index {
   margin: 1em;
@@ -23,12 +23,11 @@ div#album_index {
 
 div#album_section {
   border-radius: 5px;
-  border: 1px solid;
   padding: 1em;
   position: relative;
   background-color: #191414;
 }
 
-text {
-
+input[type=submit], button {
+  background-color: white;
 }
