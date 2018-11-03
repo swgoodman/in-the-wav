@@ -12,13 +12,13 @@ function Album(name, artist, release_date, external_url, image_url) {
   this.recent = function() {
     if (this.release_date > "2018-01-01")
       return "Recent!"
-      console.log("recent")
   }
 }
 
 
-//Search Spotify API and Return Search Results as JSON Album Objects
 $(function () {
+
+  //Search Spotify API and Return Search Results as JSON Album Objects
   $('#search_form').on("submit", function(e) {
     e.preventDefault();
     accessToken = $("input[name='credentials']").val()
@@ -127,7 +127,6 @@ $(function () {
         $('#album_list').empty()
 
         function compareNames(a, b) {
-          // Assuming you want case-insensitive comparison
           a = a.toLowerCase();
           b = b.toLowerCase();
 
@@ -138,10 +137,21 @@ $(function () {
           return compareNames(a.name, b.name);
         })
 
-        console.log(data);
-
         $.each(data, function(i, name) {
           $('#album_list').append('<li>' + data[i].name + ' --- ' + "<a href='/users/" + data[i].user_id + "/albums/" + data[i].id + "' class='more_info'>More Info</a> - <a href='" + data[i].release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
+        })
+
+        $('.more_info').on('click', function(e) {
+          e.preventDefault()
+            $.ajax({
+              type: "GET",
+              url: this.href,
+              contentType: 'application/json'
+            }).done(function(data) {
+              var $show_album = $('#show_album')
+              $show_album.empty()
+              $('#show_album').append("<img src='" + data.release_image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
+            })
         })
       }, "json")
   })
