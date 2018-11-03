@@ -3,6 +3,10 @@ class AlbumsController < ApplicationController
 
   def index
     @credentials = current_user.credentials
+    respond_to do |format|
+      format.html
+      format.json { render json: @user.albums }
+    end
   end
 
   def create
