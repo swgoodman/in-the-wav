@@ -124,10 +124,25 @@ $(function () {
   $('#alphabatize').on('click', function(e) {
     e.preventDefault();
       $.get(this.href, function(data) {
+        $('#album_list').empty()
+
+        function compareNames(a, b) {
+          // Assuming you want case-insensitive comparison
+          a = a.toLowerCase();
+          b = b.toLowerCase();
+
+          return (a < b) ? -1 : (a > b) ? 1 : 0;
+        }
+
+        data.sort(function(a, b) {
+          return compareNames(a.name, b.name);
+        })
+
         console.log(data);
-        // $.each(data.albums, function(name, value) {
-        //   $('#album_list').append('<li>' + response.name + ' --- ' + "<a href='/users/" + response.user_id + "/albums/" + response.id + "' class='more_info'>More Info</a> - <a href='" + response.release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
-    // })
+
+        $.each(data, function(i, name) {
+          $('#album_list').append('<li>' + data[i].name + ' --- ' + "<a href='/users/" + data[i].user_id + "/albums/" + data[i].id + "' class='more_info'>More Info</a> - <a href='" + data[i].release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
+        })
       }, "json")
   })
 });
