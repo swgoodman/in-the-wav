@@ -1,16 +1,16 @@
 
 
 //Album Constructor Function
-function Album(name, artist, release_date, external_url, image_url) {
+function Album(name, artist, releaseDate, externalUrl, image_url) {
   this.name = name
   this.artist = artist
-  this.release_date = release_date
-  this.external_url = external_url
+  this.releaseDate = releaseDate
+  this.externalUrl = externalUrl
   this.image_url = image_url
 
   //Custom Album Object Method
   this.recent = function() {
-    if (this.release_date > "2018-01-01")
+    if (this.releaseDate > "2018-01-01")
       return "Recent!"
   }
 }
@@ -36,17 +36,17 @@ $(function () {
       $search_list.html("")
       let i = 0
       $.each(response.albums.items, function(name, value) {
-        let name_attr = value.name
-        let artist_attr = value.artists[0].name
-        let release_attr = value.release_date
-        let url_attr = value.external_urls.spotify
-        let image_attr = value.images[0].url
-        let album = new Album(name_attr, artist_attr, release_attr, url_attr, image_attr);
+        let albumName = value.name
+        let artist = value.artists[0].name
+        let releaseDate = value.release_date
+        let externalUrl = value.external_urls.spotify
+        let imageUrl = value.images[0].url
+        let album = new Album(albumName, artist, releaseDate, externalUrl, imageUrl);
         $search_list.append('<li class"returned_albums">' +
           album.name +
           ' - ' +
           album.artist +
-          '<form class="add_album" id="' + i + '"><input type=hidden name="authenticity_token" value="' +  '<%= form_authenticity_token %>'  + '"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.release_date + '" type="hidden"><input id="url" value="' + album.external_url + '" type="hidden"><input id="image" value="' + album.image_url + '" type="hidden"><input type="submit" value="Add" name="commit">' +
+          '<form class="add_album" id="' + i + '"><input type=hidden name="authenticity_token" value="' +  '<%= form_authenticity_token %>'  + '"><input id="name" value="' + album.albumName + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.releaseDate + '" type="hidden"><input id="url" value="' + album.externalUrl + '" type="hidden"><input id="image" value="' + album.imageUrl + '" type="hidden"><input type="submit" value="Add" name="commit">' +
           '</li>');
         i++
       })
@@ -85,7 +85,7 @@ $(function () {
                     $show_album.empty()
 
                     //Show 'More Info' in DOM
-                    $('#show_album').append("<img src='" + data.image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
+                    $('#show_album').append("<img src='" + data.image_url +"' heigh='200' width='200'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
                   })
               })
             }
@@ -117,7 +117,7 @@ $(function () {
       }).done(function(data) {
         var $show_album = $('#show_album')
         $show_album.empty()
-        $('#show_album').append("<img src='" + data.image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
+        $('#show_album').append("<img src='" + data.image_url +"' heigh='200' width='200'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
       })
   })
 
@@ -150,7 +150,7 @@ $(function () {
             }).done(function(data) {
               var $show_album = $('#show_album')
               $show_album.empty()
-              $('#show_album').append("<img src='" + data.image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
+              $('#show_album').append("<img src='" + data.image_url +"' heigh='200' width='200'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
             })
         })
       }, "json")
