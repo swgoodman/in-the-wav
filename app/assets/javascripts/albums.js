@@ -1,12 +1,12 @@
 
 
 //Album Constructor Function
-function Album(name, artist, releaseDate, externalUrl, image_url) {
+function Album(name, artist, releaseDate, externalUrl, imageUrl) {
   this.name = name
   this.artist = artist
   this.releaseDate = releaseDate
   this.externalUrl = externalUrl
-  this.image_url = image_url
+  this.imageUrl = imageUrl
 
   //Custom Album Object Method
   this.recent = function() {
@@ -36,17 +36,19 @@ $(function () {
       $search_list.html("")
       let i = 0
       $.each(response.albums.items, function(name, value) {
-        let albumName = value.name
+        let nameAtt = value.name
         let artist = value.artists[0].name
         let releaseDate = value.release_date
         let externalUrl = value.external_urls.spotify
-        let imageUrl = value.images[0].url
-        let album = new Album(albumName, artist, releaseDate, externalUrl, imageUrl);
+        let imageAtt = value.images[0].url
+
+        let album = new Album(nameAtt, artist, releaseDate, externalUrl, imageAtt);
+        debugger
         $search_list.append('<li class"returned_albums">' +
           album.name +
           ' - ' +
           album.artist +
-          '<form class="add_album" id="' + i + '"><input type=hidden name="authenticity_token" value="' +  '<%= form_authenticity_token %>'  + '"><input id="name" value="' + album.albumName + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.releaseDate + '" type="hidden"><input id="url" value="' + album.externalUrl + '" type="hidden"><input id="image" value="' + album.imageUrl + '" type="hidden"><input type="submit" value="Add" name="commit">' +
+          '<form class="add_album" id="' + i + '"><input type=hidden name="authenticity_token" value="' +  '<%= form_authenticity_token %>'  + '"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.releaseDate + '" type="hidden"><input id="url" value="' + album.externalUrl + '" type="hidden"><input id="image" value="' + album.imageUrl + '" type="hidden"><input type="submit" value="Add" name="commit">' +
           '</li>');
         i++
       })
@@ -126,13 +128,6 @@ $(function () {
       $.get(this.href, function(data) {
         $('#album_list').empty()
 
-        function compareNames(a, b) {
-          a = a.toLowerCase();
-          b = b.toLowerCase();
-
-          return (a < b) ? -1 : (a > b) ? 1 : 0;
-        }
-
         data.sort(function(a, b) {
           return compareNames(a.name, b.name);
         })
@@ -155,4 +150,15 @@ $(function () {
         })
       }, "json")
   })
+
+  function compareNames(a, b) {
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+
+    return (a < b) ? -1 : (a > b) ? 1 : 0;
+  }
+
+  function moreInfo() {
+
+  }
 });
