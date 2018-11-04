@@ -1,8 +1,8 @@
-<%= image_tag(@album.release_image_url, :alt => "album_cover", height: "100", width: "100") %>
+<%= image_tag(@album.image_url, :alt => "album_cover", height: "200", width: "200") %>
 
 <%= @album.name %>
 <%= @album.artist %>
 <br>
 <%= @album.release_date %>
 <br>
-<%= link_to "LISTEN", @album.release_external_url %>
+<%= link_to "LISTEN", @album.external_url %>

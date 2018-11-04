@@ -63,8 +63,8 @@ $(function () {
               'name': $(this.name).val(),
               'artist': $(this.artist).val(),
               'release_date': $(this.release).val(),
-              'release_external_url': $(this.url).val(),
-              'release_image_url': $(this.image).val(),
+              'external_url': $(this.url).val(),
+              'image_url': $(this.image).val(),
             }
           };
           $.ajax({
@@ -74,7 +74,7 @@ $(function () {
             success: function(response) {
 
               //Add Album to 'Albums' list in DOM
-              $('#album_list').append('<li>' + response.name + ' --- ' + "<a href='/users/" + response.user_id + "/albums/" + response.id + "' class='more_info'>More Info</a> - <a href='" + response.release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
+              $('#album_list').append('<li>' + response.name + ' --- ' + "<a href='/users/" + response.user_id + "/albums/" + response.id + "' class='more_info'>More Info</a> - <a href='" + response.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
               $('.more_info').on('click', function(e) {
                 e.preventDefault()
                   $.ajax({
@@ -85,7 +85,7 @@ $(function () {
                     $show_album.empty()
 
                     //Show 'More Info' in DOM
-                    $('#show_album').append("<img src='" + data.release_image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
+                    $('#show_album').append("<img src='" + data.image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
                   })
               })
             }
@@ -117,7 +117,7 @@ $(function () {
       }).done(function(data) {
         var $show_album = $('#show_album')
         $show_album.empty()
-        $('#show_album').append("<img src='" + data.release_image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
+        $('#show_album').append("<img src='" + data.image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
       })
   })
 
@@ -138,7 +138,7 @@ $(function () {
         })
 
         $.each(data, function(i, name) {
-          $('#album_list').append('<li>' + data[i].name + ' --- ' + "<a href='/users/" + data[i].user_id + "/albums/" + data[i].id + "' class='more_info'>More Info</a> - <a href='" + data[i].release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
+          $('#album_list').append('<li>' + data[i].name + ' --- ' + "<a href='/users/" + data[i].user_id + "/albums/" + data[i].id + "' class='more_info'>More Info</a> - <a href='" + data[i].external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
         })
 
         $('.more_info').on('click', function(e) {
@@ -150,7 +150,7 @@ $(function () {
             }).done(function(data) {
               var $show_album = $('#show_album')
               $show_album.empty()
-              $('#show_album').append("<img src='" + data.release_image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.release_external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
+              $('#show_album').append("<img src='" + data.image_url +"' heigh='100' width='100'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
             })
         })
       }, "json")
