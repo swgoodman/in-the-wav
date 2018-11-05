@@ -128,9 +128,11 @@ $(function () {
       $.get(this.href, function(data) {
         $('#album_list').empty()
 
-        data.sort(function(a, b) {
-          return compareNames(a.name, b.name);
-        })
+        // data.sort(function(a, b) {
+        //   return compareNames(a.name, b.name);
+        // })
+
+        data.sort(compareNames)
 
         $.each(data, function(i, name) {
           $('#album_list').append('<li>' + data[i].name + ' --- ' + "<a href='/users/" + data[i].user_id + "/albums/" + data[i].id + "' class='more_info'>More Info</a> - <a href='" + data[i].external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a></li>")
@@ -152,13 +154,10 @@ $(function () {
   })
 
   function compareNames(a, b) {
-    a = a.toLowerCase();
-    b = b.toLowerCase();
+    a = a.name.toLowerCase();
+    b = b.name.toLowerCase();
 
     return (a < b) ? -1 : (a > b) ? 1 : 0;
   }
 
-  function moreInfo() {
-
-  }
 });
