@@ -43,7 +43,7 @@ $(function () {
         let imageAtt = value.images[0].url
 
         let album = new Album(nameAtt, artist, releaseDate, externalUrl, imageAtt);
-        debugger
+        
         $search_list.append('<li class"returned_albums">' +
           album.name +
           ' - ' +
