@@ -43,7 +43,7 @@ $(function () {
         let imageAtt = value.images[0].url
 
         let album = new Album(nameAtt, artist, releaseDate, externalUrl, imageAtt);
-        
+
         $search_list.append('<li class"returned_albums">' +
           album.name +
           ' - ' +
@@ -87,7 +87,7 @@ $(function () {
                     $show_album.empty()
 
                     //Show 'More Info' in DOM
-                    $('#show_album').append("<img src='" + data.image_url +"' heigh='200' width='200'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><p>" + data.release_date + "</p><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
+                    $('#show_album').append("<img src='" + data.image_url +"' heigh='200' width='200'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>LISTEN!</a>")
                   })
               })
             }
