@@ -7,7 +7,9 @@
 
 Spotify limits the number of songs you can "Save" to your account to 10,000. This has affected a small, but <a href="https://community.spotify.com/t5/Live-Ideas/Your-Music-Increase-maximum-Songs-allowed-in-Your-Music/idi-p/733759/page/50#comments">vocal</a> portion of users who enjoy collecting and saving records in their accounts. 
 
-In The Wav is a single page web application built using the Spotify API, Javascript, and Ruby on Rails. It is meant to give collectors a single, convenient location to continue to collect their Spotify albums and easily listen to them with Spotify's in-browser player. 
+In The Wav is a single page web application built using the Spotify API, Javascript, and Ruby on Rails. It is meant to give collectors a single, convenient location to continue to collect their Spotify albums and easily listen to them with Spotify's in-browser player.
+
+<a target="_blank" href="https://streamable.com/y58d7">Watch Demo</a>
 
 
 
