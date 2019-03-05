@@ -2,17 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#title {
+  text-align: center;
+}
+
 #log_in {
-  background-color: black;
-  border-radius: 10px;
-  padding: 10px;
+    width:400px;
+    height:200px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-100px 0 0 -200px;
+    display: inline-block;
 }
 
-#log_in a {
-  text-decoration: none;
-  font-size: 30px;
-}
-
-#in_the_wav {
-  color: black;
+#log_in_button {
+  border: none;
+  background-color: #f9f7f7;
+  text-decoration: underline;
+  font-size: 20px;
+  display: block;
+  margin: 0 auto;
 }
