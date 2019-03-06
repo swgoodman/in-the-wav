@@ -1,36 +1,38 @@
-<h1>In The Wav.</h1>
+<h1 id="title">In The Wav.</h1>
 
-<div id="album_index">
-  <div id="album_section">
+<div id="main">
+  <div id="grid">
+    <div id="album_section">
 
-  <h3> Hello <%= current_user.username %> </h3>
-  <%= link_to "Logout", logout_path %>
-    <h5>Add Album</h5>
-      <%= form_tag(album_search_url(@user), {:id => 'search_form'}) do %>
-        <%= text_field_tag :search %><br>
-        <%= hidden_field_tag 'credentials', current_user.credentials %>
-        <%= submit_tag "Search", data: { disable_with: false } %>
-      <% end %>
-    <h5>Results</h5>
-    <div id="search_results">
-      <ul>
+    <h3> Hello <%= current_user.username %> </h3>
+    <%= link_to "Logout", logout_path %>
+      <h5>Add Album</h5>
+        <%= form_tag(album_search_url(@user), {:id => 'search_form'}) do %>
+          <%= text_field_tag :search %><br>
+          <%= hidden_field_tag 'credentials', current_user.credentials %>
+          <%= submit_tag "Search", data: { disable_with: false } %>
+        <% end %>
+      <h5>Results</h5>
+      <div id="search_results">
+        <ul>
+        </ul>
+      </div>
+    </div>
+
+    <div id="album_section">
+      <h2>Albums</h2>
+      <button id="alphabatize" href="<%= user_path(@user)%>">Alphabetize!</button>
+      <ul id="album_list">
+        <% current_user.albums.each do |a| %>
+          <li><%= a.name %> --- <%= link_to "More Info", [current_user, a], class: "more_info"%> - <%= link_to "LISTEN!", a.external_url, target: "_blank", rel: "noopener noreferrer" %></li>
+        <% end %>
       </ul>
     </div>
-  </div>
 
-  <div id="album_section">
-    <h2>Albums</h2>
-    <button id="alphabatize" href="<%= user_path(@user)%>">Alphabetize!</button>
-    <ul id="album_list">
-      <% current_user.albums.each do |a| %>
-        <li><%= a.name %> --- <%= link_to "More Info", [current_user, a], class: "more_info"%> - <%= link_to "LISTEN!", a.external_url, target: "_blank", rel: "noopener noreferrer" %></li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div id="album_section">
-    <h4>Album Details</h4>
-    <div id="show_album">
+    <div id="album_section">
+      <h4>Album Details</h4>
+      <div id="show_album">
+      </div>
     </div>
   </div>
 </div>

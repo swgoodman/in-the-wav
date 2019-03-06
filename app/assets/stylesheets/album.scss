@@ -3,7 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-div#album_index {
+div#main {
+  margin: auto;
+  width: 770px;
+}
+
+div#grid {
+  width: 100%;
   margin: 1em;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -19,7 +25,6 @@ div#album_section {
   border-radius: 5px;
   padding: 1em;
   position: relative;
-  background-color: #F3F2F2;
 }
 
 input[type=submit], button {
