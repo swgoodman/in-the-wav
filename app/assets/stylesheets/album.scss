@@ -6,13 +6,15 @@
 div#main {
   margin: auto;
   width: 770px;
+  height: 100px;
 }
 
 div#grid {
   width: 100%;
   margin: 1em;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 50% 50%;
   grid-column-gap: 1em;
   grid-row-gap: .5em;
   grid-auto-rows: minmax(90px, auto);
@@ -21,10 +23,37 @@ div#grid {
 
 }
 
-div#album_section {
+div#album_add {
   border-radius: 5px;
   padding: 1em;
   position: relative;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: row1-start;
+  grid-row-end: 1;
+  border: green 2px solid
+}
+
+div#album_list {
+  border-radius: 5px;
+  padding: 1em;
+  position: relative;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1; 
+  grid-row-end: span 2;
+  border: green 2px solid
+}
+
+div#album_info {
+  border-radius: 5px;
+  padding: 1em;
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2; 
+  grid-row-end: 2;
+  border: green 2px solid
 }
 
 input[type=submit], button {

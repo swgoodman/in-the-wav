@@ -2,7 +2,7 @@
 
 <div id="main">
   <div id="grid">
-    <div id="album_section">
+    <div id="album_add">
 
     <h3> Hello <%= current_user.username %> </h3>
     <%= link_to "Logout", logout_path %>
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div id="album_section">
+    <div id="album_list">
       <h2>Albums</h2>
       <button id="alphabatize" href="<%= user_path(@user)%>">Alphabetize!</button>
       <ul id="album_list">
@@ -29,7 +29,7 @@
       </ul>
     </div>
 
-    <div id="album_section">
+    <div id="album_info">
       <h4>Album Details</h4>
       <div id="show_album">
       </div>
