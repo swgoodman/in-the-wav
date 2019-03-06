@@ -29,3 +29,17 @@ h1 {
 a {
     color: #707070;
 }
+
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+}
+
+footer a {
+    font-size: 14px;
+    float: right;
+    margin-right: 15px;
+}
