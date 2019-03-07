@@ -2,7 +2,7 @@
 
 <div id="main">
   <div id="grid">
-    <div id="album_add">
+    <div id="album_add_container">
 
     <p><%= current_user.username %></p>
     <p><%= link_to "Logout", logout_path %></p>
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div id="album_list">
+    <div id="album_list_container">
       <ul id="album_list">
         <% current_user.albums.each do |a| %>
           <li class="albums"><%= link_to (image_tag(a.image_url, :alt => "album_cover", height: "125", width: "125")), [current_user, a], class: "more_info"%></li>
@@ -26,7 +26,7 @@
       </ul>
     </div>
 
-    <div id="album_info">
+    <div id="album_info_container">
       <h4>Album Details</h4>
       <div id="show_album">
       </div>
