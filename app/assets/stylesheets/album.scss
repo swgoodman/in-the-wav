@@ -30,9 +30,8 @@ div#album_add {
   position: relative;
   grid-column-start: 1;
   grid-column-end: 1;
-  grid-row-start: row1-start;
+  grid-row-start: 1;
   grid-row-end: 1;
-  border: green 2px solid
 }
 
 div#album_list {
@@ -45,6 +44,7 @@ div#album_list {
   grid-row-end: span 2;
   overflow: scroll;
   overflow-x:hidden;
+
 }
 
 div#album_list::-webkit-scrollbar-track {
@@ -60,6 +60,12 @@ div#album_list::-webkit-scrollbar-thumb {
   background-color: #707070;
 }
 
+.albums {
+  list-style: none;
+  display: inline;
+
+}
+
 div#album_info {
   border-radius: 5px;
   padding: 1em;
@@ -68,9 +74,10 @@ div#album_info {
   grid-column-end: 1;
   grid-row-start: 2; 
   grid-row-end: 2;
-  border: green 2px solid
 }
 
 input[type=submit], button {
   background-color: white;
 }
+
+
