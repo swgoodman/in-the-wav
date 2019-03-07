@@ -6,6 +6,7 @@
 div#main {
   margin: auto;
   width: 770px;
+  text-align: center;
   
 }
 
@@ -21,6 +22,7 @@ div#grid {
   grid-auto-rows: minmax(90px, auto);
   position: relative;
   justify-content: center;
+  text-align: left;
 
 }
 
