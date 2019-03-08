@@ -52,6 +52,7 @@ footer a {
     border: none;
     border-radius: 3px;
     position: absolute;
+    font-size: 14px !important ;
 }
 
 .button:hover {
