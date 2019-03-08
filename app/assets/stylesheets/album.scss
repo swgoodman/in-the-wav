@@ -41,14 +41,22 @@ div#album_add_container {
 }
 
 div#album_add_container h5 {
-  padding: 0;
+  display: block;
+  line-height: 0;
+}
+
+#search_form {
+  font-family: Helvetica;
+}
+
+#search_form input {
   display: inline;
 }
 
 #search_results {
   overflow: scroll;
   overflow-x:hidden;
-  height: 150px;
+  height: 200px;
   line-height: 0;
   font-size: 15px; 
 }
