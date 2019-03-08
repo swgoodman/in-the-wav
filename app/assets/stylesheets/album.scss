@@ -57,10 +57,14 @@ div#album_add_container h5 {
   font-size: 16px;
 }
 
+#search_form text {
+  border: 10px black solid;
+}
+
 #search_results {
   overflow: scroll;
   overflow-x:hidden;
-  height: 200px;
+  height: 250px;
   line-height: 0;
   font-size: 16px;
   margin-top: 10px;
@@ -120,7 +124,7 @@ div#album_list_container::-webkit-scrollbar-thumb {
 
 div#album_info_container {
   border-radius: 5px;
-  padding: 1em;
+  padding-top: 1em;
   position: relative;
   grid-column-start: 1;
   grid-column-end: 1;
