@@ -44,7 +44,7 @@ $(function () {
 
         let album = new Album(nameAtt, artist, releaseDate, externalUrl, imageAtt);
 
-        $search_list.append('<li class"returned_albums">' +
+        $search_list.append('<li class="returned_albums"><img alt="album_cover" height="45" width="45" src="' + album.imageUrl + '">' +
           album.name +
           ' - ' +
           album.artist +
