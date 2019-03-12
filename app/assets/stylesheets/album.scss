@@ -75,10 +75,22 @@ div#album_add_container h5 {
   padding-inline-start: 0;
 }
 
+.search_results_title {
+  font-weight: bold;
+}
+
+.search_results_artist {
+  font-size: 14px;
+}
+
 .returned_albums {
   padding-top: 10px;
   border-bottom: 1px black solid;
   display:block;
+}
+
+.button_add_album {
+  
 }
 
 div#search_results::-webkit-scrollbar-track {
