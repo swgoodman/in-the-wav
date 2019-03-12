@@ -48,7 +48,7 @@ $(function () {
           album.name +
           '</p><p class="search_results_artist">' +
           album.artist +
-          '</p><form class="add_album" id="' + i + '"><input type=hidden name="authenticity_token" value="' + '<%= form_authenticity_token %>' + '"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.releaseDate + '" type="hidden"><input id="url" value="' + album.externalUrl + '" type="hidden"><input id="image" value="' + album.imageUrl + '" type="hidden"><input type="submit" value="Add" name="commit">' +
+          '</p><form class="add_album" id="' + i + '"><input type=hidden name="authenticity_token" value="' + '<%= form_authenticity_token %>' + '"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.releaseDate + '" type="hidden"><input id="url" value="' + album.externalUrl + '" type="hidden"><input id="image" value="' + album.imageUrl + '" type="hidden"><input type="submit" value="+" name="commit" class="button_add_album">' +
           '</li>');
         i++
       })

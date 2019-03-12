@@ -50,16 +50,16 @@ footer a {
     background-color: #f9f7f7 !important;
     padding: 5px;
     border: none;
-    border-radius: 3px;
     position: absolute;
     font-size: 14px !important ;
 }
 
 .button:hover {
-    color: #ffffff !important;
+    color: black !important;
     background: #707070;
     transition: all 0.4s ease 0s;
     transition-timing-function: ease-out;
+    cursor: pointer;
 }
 
 
