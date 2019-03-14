@@ -119,7 +119,7 @@ $(function () {
       }).done(function(data) {
         var $show_album = $('#show_album')
         $show_album.empty()
-        $('#show_album').append("<img src='" + data.image_url +"' heigh='200' width='200'><h3>" + data.name + "</h3><h5>" + data.artist + "</h5><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>Listen</a>")
+        $('#show_album').append("<img src='" + data.image_url +"' heigh='200' width='200'><h3 id='show_name'>" + data.name + "</h3><h5>" + data.artist + "</h5><a href='" + data.external_url + "' target='_blank' rel='noopener noreferrer'>Listen</a>")
       })
   })
 
