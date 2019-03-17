@@ -73,24 +73,38 @@ div#album_add_container h5 {
 #search_results_list {
   list-style: none;
   padding-inline-start: 0;
+  margin-block-start: 0;
 }
 
 .search_results_title {
   font-weight: bold;
   line-height: 1;
   padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .search_results_artist {
   font-size: 14px;
   line-height: 1;
   padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .returned_albums {
-  padding-top: 10px;
+  padding-top: 0;
   border-bottom: 1px black solid;
-  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 div#list_item_img {
@@ -101,6 +115,14 @@ div#list_item_img {
 }
 
 div#list_item_text {
+  padding-left: 10px;
+  display: inline-block;
+  line-height: 0;
+  margin-block-end: 0;
+  margin: 0;
+}
+
+div#list_item_form {
   display: inline-block;
   line-height: 0;
   margin-block-start: .7em;
@@ -188,6 +210,10 @@ div#album_info_container h6 {
   display: block;
   margin-block-start: .5em;
   margin-block-end: .5em;
+  width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 div#album_info_container p, a {
