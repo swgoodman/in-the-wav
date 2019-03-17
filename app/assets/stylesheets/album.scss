@@ -90,7 +90,21 @@ div#album_add_container h5 {
 .returned_albums {
   padding-top: 10px;
   border-bottom: 1px black solid;
-  display:block;
+  display: block;
+}
+
+div#list_item_img {
+  display: inline-block;
+  line-height: 0;
+  margin-block-start: .7em;
+  margin-block-end: 0;
+}
+
+div#list_item_text {
+  display: inline-block;
+  line-height: 0;
+  margin-block-start: .7em;
+  margin-block-end: 0;
 }
 
 .button_add_album {

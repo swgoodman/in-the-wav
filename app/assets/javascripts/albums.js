@@ -44,11 +44,11 @@ $(function () {
 
         let album = new Album(nameAtt, artist, releaseDate, externalUrl, imageAtt);
 
-        $search_list.append('<li class="returned_albums"><img alt="album_cover" height="45" width="45" src="' + album.imageUrl + '"><p class="search_results_title">' +
+        $search_list.append('<li class="returned_albums"><div id="list_item_img"><img alt="album_cover" height="45" width="45" src="' + album.imageUrl + '"></div><div id="list_item_text"><p class="search_results_title">' +
           album.name +
           '</p><p class="search_results_artist">' +
           album.artist +
-          '</p><form class="add_album" id="' + i + '"><input type=hidden name="authenticity_token" value="' + '<%= form_authenticity_token %>' + '"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.releaseDate + '" type="hidden"><input id="url" value="' + album.externalUrl + '" type="hidden"><input id="image" value="' + album.imageUrl + '" type="hidden"><input type="submit" value="+" name="commit" class="button_add_album">' +
+          '</p></div><form class="add_album" id="' + i + '"><input type=hidden name="authenticity_token" value="' + '<%= form_authenticity_token %>' + '"><input id="name" value="' + album.name + '" type="hidden"><input id="artist" value="' + album.artist + '" type="hidden"><input id="release" value="' + album.releaseDate + '" type="hidden"><input id="url" value="' + album.externalUrl + '" type="hidden"><input id="image" value="' + album.imageUrl + '" type="hidden"><input type="submit" value="+" name="commit" class="button_add_album">' +
           '</li>');
         i++
       })
