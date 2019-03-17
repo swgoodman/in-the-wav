@@ -19,8 +19,23 @@
 
     <div id="album_list_container">
       <ul id="album_list">
-        <% current_user.albums.each do |a| %>
+        <% if current_user.albums.empty? %>
+          <img src="https://media.giphy.com/media/3xU22GnGEP2r6/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/5yLgocnSlDKgWymJ5fi/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/ukqOBz4W0ApnDLUw23/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/3qskbFZJ0Z9q0b1rfY/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/UsGbPVVuNBoMo/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/1dMMbcYiO40OX6e8zm/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/9xyVBrgWR3aA2BAHLX/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/NPSBznfytOtCo/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/WXkgDxZxSeMQo/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/fe4dwRw6nZKWDRjMzP/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/t7syKPdeSZ8SwhQ1Hz/giphy.gif" height='125' width='125'>
+          <img src="https://media.giphy.com/media/28mkBBJuyIEPVRbypT/giphy.gif" height='125' width='125'>
+          
+        <% else current_user.albums.each do |a| %>
           <li class="albums"><%= link_to (image_tag(a.image_url, :alt => "album_cover", height: "125", width: "125")), [current_user, a], class: "more_info"%></li>
+        <% end %>
         <% end %>
       </ul>
     </div>

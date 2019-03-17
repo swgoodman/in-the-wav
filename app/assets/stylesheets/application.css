@@ -66,4 +66,14 @@ footer a {
     font-size: 14px;
 }
 
+@media (min-width:875px) {
+    #screen_warning {
+        display: none;
+    }
+}
+
+#screen_warning {
+    text-align: center;
+}
+
 
