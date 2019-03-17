@@ -76,7 +76,7 @@ $(function () {
             success: function(response) {
 
               //Add Album to 'Albums' list in DOM
-              $('#album_list').append("<li class='albums'><a class='more_info' href='/users/" + response.user_id + "/albums/" + response.id + "'><img alt='album_cover' height='125' width='125' src='" + response.image_url + "'></a></li>")
+              $('#album_list').append("<li class='albums' style='padding-right:5px'><a class='more_info' href='/users/" + response.user_id + "/albums/" + response.id + "'><img alt='album_cover' height='125' width='125' src='" + response.image_url + "'></a></li>")
               $('.more_info').on('click', function(e) {
                 e.preventDefault()
                   $.ajax({
