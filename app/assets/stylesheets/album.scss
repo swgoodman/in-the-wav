@@ -166,18 +166,22 @@ div#album_info_container {
   grid-column-end: 1;
   grid-row-start: 2; 
   grid-row-end: 2;
-  line-height: 0;
 }
 
-#show_name {
-  overflow: hidden;
-  white-space:nowrap;
-  text-overflow: ellipsis;
-  width: 50px;
-  display:block;
+div#album_info_container h6 {
+  font-size: 14px;
+  line-height: 1;
+  display: block;
+  margin-block-start: .5em;
+  margin-block-end: .5em;
 }
 
-div
+div#album_info_container p, a {
+  line-height: 1;
+  font-size: 14px;
+  margin-block-start: .5em;
+  margin-block-end: .5em;
+}
 
 input[type=submit], button {
   background-color: white;
