@@ -2,10 +2,14 @@ class AlbumsController < ApplicationController
   before_action :set_user
 
   def index
-    @credentials = current_user.credentials
-    respond_to do |format|
-      format.html
-      format.json { render json: @user.albums }
+    if current_user == nil
+      redirect_to root_path
+    else
+      @credentials = current_user.credentials
+      respond_to do |format|
+        format.html
+        format.json { render json: @user.albums }
+      end
     end
   end
 

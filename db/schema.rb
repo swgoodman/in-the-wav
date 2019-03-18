@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_11_04_215403) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "albums", force: :cascade do |t|
     t.integer "rank"
     t.string "name"
