@@ -1,7 +1,9 @@
+<!--Title-->
 <h1 class="title" id="main_title">In The Wav.</h1>
 
 <div id="main">
   <div id="grid">
+    <!--Add Album Section-->
     <div id="album_add_container">
       <h5>Add Album</h5>
         <div class='form'>
@@ -11,12 +13,14 @@
             <%= submit_tag "Search", class: 'button', data: { disable_with: false } %>
           <% end %>
         </div>
+      <!--Search Results-->
       <div id="search_results">
         <ul id="search_results_list">
         </ul>
       </div>
     </div>
 
+    <!--Album List-->
     <div id="album_list_container">
       <ul id="album_list">
         <% if current_user.albums.empty? %>
@@ -40,6 +44,7 @@
       </ul>
     </div>
 
+    <!--Album Info-->
     <div id="album_info_container">
       <div id="show_album">
       </div>
