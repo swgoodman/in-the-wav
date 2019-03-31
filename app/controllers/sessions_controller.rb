@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+  # Create new session
   def create
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
 
@@ -19,6 +20,7 @@ class SessionsController < ApplicationController
 
   end
 
+  # Log out
   def destroy
     reset_session
     redirect_to root_path
@@ -26,6 +28,7 @@ class SessionsController < ApplicationController
 
   private
 
+  # Spotify OmniAuth verification
   def auth
     request.env['omniauth.auth']
   end
