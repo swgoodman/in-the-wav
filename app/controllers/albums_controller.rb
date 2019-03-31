@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   before_action :set_user
 
+  # Show all albums
   def index
     if current_user == nil
       redirect_to root_path
@@ -13,6 +14,7 @@ class AlbumsController < ApplicationController
     end
   end
 
+  # Create new album
   def create
     @album = @user.albums.build(album_params)
     if @album.save
@@ -20,9 +22,11 @@ class AlbumsController < ApplicationController
     end
   end
 
-  def search
-  end
+  # Future search function
+  # def search
+  # end
 
+  # Show album details
   def show
     @album = Album.find(params[:id])
     render json: @album
@@ -30,10 +34,12 @@ class AlbumsController < ApplicationController
 
   private
 
+  # Sets current user
   def set_user
     @user = current_user
   end
 
+  # Acceptable album params
   def album_params
     params.require(:album).permit(:name, :artist, :release_date, :external_url, :image_url)
   end
